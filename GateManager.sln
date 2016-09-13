@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GateManager", "GateManager\GateManager.csproj", "{292CC853-37CF-48B4-858D-B73A438A483A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GateManager.Web", "GateManager\GateManager.Web.csproj", "{292CC853-37CF-48B4-858D-B73A438A483A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GateManager.API", "GateManager.API\GateManager.API.csproj", "{5DB7BEDF-6D52-489E-B5C0-EFA6364F7147}"
 EndProject

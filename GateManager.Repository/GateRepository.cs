@@ -55,7 +55,7 @@ namespace GateManager.Repository
                         new Flight{ FlightId = 17, FlightCode = "PL939", ArrivalTime = new DateTime(2016, 9, 9, 9, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 9, 59, 0), Status = FlightStatus.Active },
                         new Flight{ FlightId = 18, FlightCode = "FP930", ArrivalTime = new DateTime(2016, 9, 9, 13, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 13, 29, 0), Status = FlightStatus.Active },
                         new Flight{ FlightId = 19, FlightCode = "LF004", ArrivalTime = new DateTime(2016, 9, 9, 14, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 14, 29, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 19, FlightCode = "VP930", ArrivalTime = new DateTime(2016, 9, 9, 17, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 17, 59, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 20, FlightCode = "VP930", ArrivalTime = new DateTime(2016, 9, 9, 17, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 17, 59, 0), Status = FlightStatus.Active },
                     }
                 },
                 new GateFlights
@@ -63,16 +63,16 @@ namespace GateManager.Repository
                     Gate = new Gate { GateNumber = 25 },
                     Flights = new List<Flight>
                     {
-                        new Flight{ FlightId = 11, FlightCode = "TF390", ArrivalTime = new DateTime(2016, 9, 9, 4, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 4, 29, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 12, FlightCode = "FJ101", ArrivalTime = new DateTime(2016, 9, 9, 5, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 5, 59, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 13, FlightCode = "XF003", ArrivalTime = new DateTime(2016, 9, 9, 6, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 6, 29, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 14, FlightCode = "RL900", ArrivalTime = new DateTime(2016, 9, 9, 10, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 10, 59, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 15, FlightCode = "NZ010", ArrivalTime = new DateTime(2016, 9, 9, 11, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 11, 29, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 16, FlightCode = "FJ404", ArrivalTime = new DateTime(2016, 9, 9, 16, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 16, 29, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 17, FlightCode = "AP301", ArrivalTime = new DateTime(2016, 9, 9, 17, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 17, 59, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 18, FlightCode = "PL903", ArrivalTime = new DateTime(2016, 9, 9, 20, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 20, 29, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 19, FlightCode = "LF009", ArrivalTime = new DateTime(2016, 9, 9, 21, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 21, 29, 0), Status = FlightStatus.Active },
-                        new Flight{ FlightId = 19, FlightCode = "FJ940", ArrivalTime = new DateTime(2016, 9, 9, 21, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 21, 59, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 21, FlightCode = "TF390", ArrivalTime = new DateTime(2016, 9, 9, 4, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 4, 29, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 22, FlightCode = "FJ101", ArrivalTime = new DateTime(2016, 9, 9, 5, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 5, 59, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 23, FlightCode = "XF003", ArrivalTime = new DateTime(2016, 9, 9, 6, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 6, 29, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 24, FlightCode = "RL900", ArrivalTime = new DateTime(2016, 9, 9, 10, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 10, 59, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 25, FlightCode = "NZ010", ArrivalTime = new DateTime(2016, 9, 9, 11, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 11, 29, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 26, FlightCode = "FJ404", ArrivalTime = new DateTime(2016, 9, 9, 16, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 16, 29, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 27, FlightCode = "AP301", ArrivalTime = new DateTime(2016, 9, 9, 17, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 17, 59, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 28, FlightCode = "PL903", ArrivalTime = new DateTime(2016, 9, 9, 20, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 20, 29, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 29, FlightCode = "LF009", ArrivalTime = new DateTime(2016, 9, 9, 21, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 21, 29, 0), Status = FlightStatus.Active },
+                        new Flight{ FlightId = 30, FlightCode = "FJ940", ArrivalTime = new DateTime(2016, 9, 9, 21, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 21, 59, 0), Status = FlightStatus.Active },
                     }
                 }
             };
