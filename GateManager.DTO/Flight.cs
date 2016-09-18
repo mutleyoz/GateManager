@@ -16,8 +16,6 @@ namespace GateManager.DTO
 
     public class Flight
     {
-        public long FlightId { get; set; }
-
         [Required]
         public string FlightCode { get; set; }
 

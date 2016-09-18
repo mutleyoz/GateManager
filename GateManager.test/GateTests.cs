@@ -65,7 +65,6 @@ namespace GateManager.test
         {
             Flight flight = new Flight
             {
-                FlightId = 101,
                 FlightCode = "QFA012",
                 ArrivalTime = new DateTime(2016, 9, 9, 10, 30,0 ),
                 DepartureTime= new DateTime(2016, 9, 9, 10, 59, 0 ),
@@ -88,7 +87,6 @@ namespace GateManager.test
         {
             Flight flight = new Flight
             {
-                FlightId = 102,
                 FlightCode = "TGW112",
                 ArrivalTime = new DateTime(2016, 9, 9, 9, 20, 0),
                 DepartureTime = new DateTime(2016, 9, 9, 9, 49, 0),

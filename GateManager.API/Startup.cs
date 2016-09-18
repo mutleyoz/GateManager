@@ -27,7 +27,7 @@ namespace GateManager.API
             builder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            builder.RegisterType<GateRepository>().As<IGateRepository>();
+            builder.RegisterType<GateRepository>().As<IGateRepository>().SingleInstance();
 
             config.EnableSwagger(c => c.SingleApiVersion("v1", "GateManager API")).EnableSwaggerUi();
 

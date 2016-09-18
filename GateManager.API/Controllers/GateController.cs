@@ -8,10 +8,12 @@ using System.Web.Http;
 using GateManager.DTO;
 using GateManager.Repository;
 using GateManager.API.Helpers;
+using System.Web.Http.Cors;
 
 namespace GateManager.API.Controllers
 {
     [RoutePrefix("api")]
+    [EnableCors(origins: "http://localhost:63342", headers: "*", methods: "*")]
     public class GateController : ApiController
     {
         private IGateRepository _repository;
@@ -50,7 +52,7 @@ namespace GateManager.API.Controllers
         {
             if (ModelState.IsValid)
             {
-                var currentFlights = _repository.GetFlights(gatenumber).Result;
+                var currentFlights = await _repository.GetFlights(gatenumber);
                 if (currentFlights.HasGateConflict(flight))
                 {
                     flight.Status = FlightStatus.Conflict;
