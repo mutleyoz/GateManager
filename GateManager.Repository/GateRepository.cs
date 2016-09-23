@@ -29,16 +29,16 @@ namespace GateManager.Repository
                     Gate = new Gate { GateNumber = 23 },
                     Flights = new List<Flight>
                     {
-                        new Flight{  FlightCode = "QF183", ArrivalTime = new DateTime(2016, 9, 9, 9, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 9, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "LF987", ArrivalTime = new DateTime(2016, 9, 9, 9, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 9, 59, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "NZ992", ArrivalTime = new DateTime(2016, 9, 9, 10, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 10, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "PK129", ArrivalTime = new DateTime(2016, 9, 9, 12, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 12, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "QF239", ArrivalTime = new DateTime(2016, 9, 9, 14, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 14, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "PK221", ArrivalTime = new DateTime(2016, 9, 9, 14, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 14, 59, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "RN982", ArrivalTime = new DateTime(2016, 9, 9, 16, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 16, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "PK556", ArrivalTime = new DateTime(2016, 9, 9, 17, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 17, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "FJ001", ArrivalTime = new DateTime(2016, 9, 9, 17, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 15, 59, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "FJ003", ArrivalTime = new DateTime(2016, 9, 9, 19, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 19, 29, 0), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "QF183", ArrivalTime =  DateTime.Today.AddHours(9).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(9).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "LF987", ArrivalTime = DateTime.Today.AddHours(9).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(9).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "NZ992", ArrivalTime = DateTime.Today.AddHours(10).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(10).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "PK129", ArrivalTime = DateTime.Today.AddHours(12).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(12).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "QF239", ArrivalTime = DateTime.Today.AddHours(14).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(14).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "PK221", ArrivalTime = DateTime.Today.AddHours(14).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(14).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "RN982", ArrivalTime = DateTime.Today.AddHours(16).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(16).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "PK556", ArrivalTime = DateTime.Today.AddHours(17).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(17).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "FJ001", ArrivalTime = DateTime.Today.AddHours(17).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(15).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "FJ003", ArrivalTime = DateTime.Today.AddHours(19).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(19).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
                     }
                 },
                 new GateFlights
@@ -46,16 +46,16 @@ namespace GateManager.Repository
                     Gate = new Gate { GateNumber = 24 },
                     Flights = new List<Flight>
                     {
-                        new Flight{  FlightCode = "LB002", ArrivalTime = new DateTime(2016, 9, 9, 0, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 0, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "XF001", ArrivalTime = new DateTime(2016, 9, 9, 0, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 0, 59, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "QF343", ArrivalTime = new DateTime(2016, 9, 9, 3, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 3, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "QF345", ArrivalTime = new DateTime(2016, 9, 9, 4, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 4, 59, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "VP103", ArrivalTime = new DateTime(2016, 9, 9, 8, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 8, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "FJ003", ArrivalTime = new DateTime(2016, 9, 9, 9, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 9, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "PL939", ArrivalTime = new DateTime(2016, 9, 9, 9, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 9, 59, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "FP930", ArrivalTime = new DateTime(2016, 9, 9, 13, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 13, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "LF004", ArrivalTime = new DateTime(2016, 9, 9, 14, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 14, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "VP930", ArrivalTime = new DateTime(2016, 9, 9, 17, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 17, 59, 0), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "LB002", ArrivalTime = DateTime.Today.AddHours(0).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(0).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "XF001", ArrivalTime = DateTime.Today.AddHours(1).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(1).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "QF343", ArrivalTime = DateTime.Today.AddHours(3).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(3).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "QF345", ArrivalTime = DateTime.Today.AddHours(4).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(4).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "VP103", ArrivalTime = DateTime.Today.AddHours(8).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(8).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "FJ003", ArrivalTime = DateTime.Today.AddHours(9).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(9).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "PL939", ArrivalTime = DateTime.Today.AddHours(9).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(9).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "FP930", ArrivalTime = DateTime.Today.AddHours(13).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(13).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "LF004", ArrivalTime = DateTime.Today.AddHours(14).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(14).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "VP930", ArrivalTime = DateTime.Today.AddHours(17).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(17).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
                     }
                 },
                 new GateFlights
@@ -63,16 +63,16 @@ namespace GateManager.Repository
                     Gate = new Gate { GateNumber = 25 },
                     Flights = new List<Flight>
                     {
-                        new Flight{  FlightCode = "TF390", ArrivalTime = new DateTime(2016, 9, 9, 4, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 4, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "FJ101", ArrivalTime = new DateTime(2016, 9, 9, 5, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 5, 59, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "XF003", ArrivalTime = new DateTime(2016, 9, 9, 6, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 6, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "RL900", ArrivalTime = new DateTime(2016, 9, 9, 10, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 10, 59, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "NZ010", ArrivalTime = new DateTime(2016, 9, 9, 11, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 11, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "FJ404", ArrivalTime = new DateTime(2016, 9, 9, 16, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 16, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "AP301", ArrivalTime = new DateTime(2016, 9, 9, 17, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 17, 59, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "PL903", ArrivalTime = new DateTime(2016, 9, 9, 20, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 20, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "LF009", ArrivalTime = new DateTime(2016, 9, 9, 21, 0, 0), DepartureTime = new DateTime(2016, 9, 9, 21, 29, 0), Status = FlightStatus.Active },
-                        new Flight{  FlightCode = "FJ940", ArrivalTime = new DateTime(2016, 9, 9, 21, 30, 0), DepartureTime = new DateTime(2016, 9, 9, 21, 59, 0), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "TF390", ArrivalTime = DateTime.Today.AddHours(4).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(4).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "FJ101", ArrivalTime = DateTime.Today.AddHours(5).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(5).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "XF003", ArrivalTime = DateTime.Today.AddHours(6).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(6).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "RL900", ArrivalTime = DateTime.Today.AddHours(10).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(10).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "NZ010", ArrivalTime = DateTime.Today.AddHours(11).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(11).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "FJ404", ArrivalTime = DateTime.Today.AddHours(16).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(16).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "AP301", ArrivalTime = DateTime.Today.AddHours(17).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(17).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "PL903", ArrivalTime = DateTime.Today.AddHours(20).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(20).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "LF009", ArrivalTime = DateTime.Today.AddHours(21).AddMinutes(0).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(21).AddMinutes(29).ToUniversalTime(), Status = FlightStatus.Active },
+                        new Flight{  FlightCode = "FJ940", ArrivalTime = DateTime.Today.AddHours(21).AddMinutes(30).ToUniversalTime(), DepartureTime = DateTime.Today.AddHours(21).AddMinutes(59).ToUniversalTime(), Status = FlightStatus.Active },
                     }
                 }
             };
@@ -88,7 +88,7 @@ namespace GateManager.Repository
             if (!_gateFlights.Where(gf => gf.Gate.GateNumber == gateNumber).Any())
                 throw new ArgumentException("Invalid gate number provided");
 
-            return await Task.Run(() => _gateFlights.SingleOrDefault(gf => gf.Gate.GateNumber == gateNumber).Flights);
+            return await Task.Run(() => _gateFlights.SingleOrDefault(gf => gf.Gate.GateNumber == gateNumber).Flights.Where(f => f.Status != FlightStatus.Cancelled).OrderBy( f => f.ArrivalTime).ToList());
 
         }
 
@@ -96,6 +96,12 @@ namespace GateManager.Repository
         {
             if (!_gateFlights.Any(gf => gf.Gate.GateNumber == gateNumber))
                 throw new ArgumentException("Invalid gate number provided");
+
+            if(_gateFlights.Single(gf => gf.Gate.GateNumber == gateNumber).Flights.Any(f => f.FlightCode == flight.FlightCode && f.Status != FlightStatus.Cancelled))
+                throw new ArgumentException("Flight is already scheduled at this gate");
+
+            flight.ArrivalTime = flight.ArrivalTime.ToUniversalTime();
+            flight.DepartureTime = flight.DepartureTime.ToUniversalTime();
 
             await Task.Run(() => _gateFlights.FirstOrDefault(gf => gf.Gate.GateNumber == gateNumber).Flights.Add(flight));
         }
@@ -115,7 +121,12 @@ namespace GateManager.Repository
             await Task.Run(() =>
             {
                 var currentFlight = _gateFlights.FirstOrDefault(gf => gf.Gate.GateNumber == gateNumber).Flights.FirstOrDefault(f => f.FlightCode == flight.FlightCode);
-                currentFlight = flight;
+                if(currentFlight != null)
+                {
+                    currentFlight.ArrivalTime = flight.ArrivalTime;
+                    currentFlight.DepartureTime = flight.DepartureTime;
+                    currentFlight.Status = flight.Status;
+                }
             });
         }
 

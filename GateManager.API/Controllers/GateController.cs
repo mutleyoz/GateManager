@@ -73,6 +73,12 @@ namespace GateManager.API.Controllers
         {
             if (ModelState.IsValid)
             {
+                var currentFlights = await _repository.GetFlights(gatenumber);
+                if (currentFlights.HasGateConflict(flight))
+                {
+                    flight.Status = FlightStatus.Conflict;
+                }
+
                 await _repository.UpdateFlight(gatenumber, flight);
                 return Ok();
             }
@@ -83,7 +89,7 @@ namespace GateManager.API.Controllers
         }
 
         [HttpPut]
-        [Route("gates/{gatenumber}/flights/{flightcode}")]
+        [Route("gates/{gatenumber}/flights/{flightcode}/gate/{targetgatenumber}")]
         public async Task<IHttpActionResult> MoveFlight(int gatenumber, string flightcode, int targetgatenumber)
         {
             var flights = await _repository.GetFlights(gatenumber);
@@ -102,6 +108,7 @@ namespace GateManager.API.Controllers
                         flight.Status = FlightStatus.Active;
                     }
                     await _repository.MoveFlight(gatenumber, flight, targetgatenumber);
+                    return Ok();
                 }
                 else
                 {
@@ -146,7 +153,6 @@ namespace GateManager.API.Controllers
 
             if (selectedFlight != null)
             {
-
                 var gates = await _repository.GetGates();
 
                 foreach (var gate in gates)

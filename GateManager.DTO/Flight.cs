@@ -28,5 +28,7 @@ namespace GateManager.DTO
         public DateTime DepartureTime { get; set; }
 
         public FlightStatus Status { get; set; }
+
+        public List<Gate> AlternateGates { get; set; }
     }
 }
