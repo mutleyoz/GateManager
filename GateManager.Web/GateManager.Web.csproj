@@ -182,16 +182,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\gatemanager.css" />
     <Content Include="favicon.ico" />
     <Content Include="GateManager.html" />
-    <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\gatemanager.js" />
     <Content Include="Scripts\knockout-3.4.0.js" />
