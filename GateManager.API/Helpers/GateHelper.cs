@@ -12,10 +12,12 @@ namespace GateManager.API.Helpers
         {
             bool result = false;
 
-            var activeFlights = flights.Where(f => f.Status == FlightStatus.Active).ToList();
+            var activeFlights = flights.Where(f => f.Status != FlightStatus.Cancelled).ToList();
             activeFlights.ForEach( f =>
             {
-                if ((flight.ArrivalTime >= f.ArrivalTime && flight.ArrivalTime <= f.DepartureTime) || (flight.DepartureTime >= f.ArrivalTime && flight.DepartureTime <= f.DepartureTime))
+                if ( f.FlightCode != flight.FlightCode && ((flight.ArrivalTime >= f.ArrivalTime && flight.ArrivalTime <= f.DepartureTime) || 
+                                                           (flight.DepartureTime >= f.ArrivalTime && flight.DepartureTime <= f.DepartureTime) ||
+                                                           (flight.ArrivalTime <= f.ArrivalTime && flight.DepartureTime >= f.DepartureTime)))
                 {
                     result =  true;
                 }

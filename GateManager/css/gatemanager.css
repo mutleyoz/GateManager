@@ -1,0 +1,58 @@
+body{
+    padding: 10px;
+}
+
+.table th{
+    border-top: none;
+}
+
+.active {
+     font-weight: bold;
+ }
+
+.scheduled {
+    color: green;
+    font-weight: bold;
+}
+
+.conflict {
+    color: red;
+    font-weight: bold;
+}
+
+.bg-faded {
+    background-color: #f7f7f9;
+}
+
+.navbar {
+    min-height: 42px;
+}
+
+.navbar-light .navbar-brand{
+    color: rgba(0,0,0,.8);
+    height: 42px;
+}
+
+.nav-item {
+    color: rgba(0,0,0,.8);
+}
+.form-error{
+    display:block;
+    color: red;
+}
+
+#movedialog ul{
+    list-style-type: none;
+}
+
+#addFlight{
+    min-height: 50px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: #95BCC9;
+    margin-bottom: 15px;
+}
+
+#addFlight a{
+    padding-left: 10px;
+}

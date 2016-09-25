@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css"
+          integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/css/gatemanager.css">
+</head>
+<body>
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Scheduled Flights</h3>
+                <nav class="navbar">
+                    <ul class="nav nav-tabs" data-bind="foreach: gates">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bind="text: 'Gate ' + gatenumber,
+                                                                                 css: { active: gatenumber == $root.selectedGate().gatenumber },
+                                                                                 click: $root.loadFlights"></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form id="scheduleform" method="post">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Flight Code</th>
+                                <th>Arrival Time</th>
+                                <th>Departure Time</th>
+                                <th>Status</th>
+                                <th></th>
+                                <th>Action</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: flights">
+                            <tr>
+                                <td data-bind="text: flightcode"></td>
+                                <td><input type="text" data-validation="time" data-bind="value: arrivaltime, event: {change : $root.changeTime}" /></td>
+                                <td><input type="text" data-validation="time" data-bind="value: departuretime, event: {change : $root.changeTime}" /></td>
+                                <td data-bind="text: $root.statusDescription(status),
+                                       css: { scheduled: status() == 0, conflict: status() == 1}"></td>
+                                <td><a href="#" data-bind="click: $root.loadAlternateGates">Move flight</a></td>
+                                <td><a href="#" data-bind="click: $root.cancelFlight">Cancel Flight</a></td>
+                                <td><a href="#" data-bind="visible: status() == 1, click: $root.bumpFlights">Bump</a></td>
+                                <td data-bind="text:error"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="movedialog" style="display:none" title="Move Flight">
+                        <div data-bind="visible: alternateGates().length > 0">
+                            <p>Move flight to gate:</p>
+                            <ul data-bind="foreach: alternateGates">
+                                <li class="nav-item">
+                                    <a href="#" data-bind="text: 'Gate ' + gatenumber,
+                                                                            click: $root.moveFlight"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div data-bind="visible: alternateGates().length == 0">
+                            <p>There are no alternate gates for this flight.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="addFlight" style="display: none">
+                    <table>
+                        <tr data-bind="with: $root.initFlight">
+                            <td><input type="text" data-bind="value : flightcode" /></td>
+                            <td><input id="arrival" type="text" data-validation="time" data-bind="value : arrivaltime" /></td>
+                            <td><input id="departure" type="text" data-validation="time" data-bind="value : departuretime" /></td>
+                            <td><a href="#" data-bind="click: $root.addFlight">Save</a></td>
+                            <td><a href="#" data-bind="click: $root.cancelAddFlight">Cancel</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <button class="btn btn-primary" data-bind="click: $root.showAddFlight">Add Flight</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"
+            integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"
+            integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB"
+            crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="scripts/knockout-3.4.0.js" type="text/javascript"></script>
+
+    <script src="/scripts/moment.js" type="text/javascript"></script>
+    <script src="/scripts/moment-timezone.js" type="text/javascript"></script>
+    <script src="/scripts/gatemanager.js" type="text/javascript"></script>
+</body>
+</html>

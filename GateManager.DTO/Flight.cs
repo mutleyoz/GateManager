@@ -9,7 +9,7 @@ namespace GateManager.DTO
 {
     public enum FlightStatus
     {
-        Active,
+        Scheduled,
         Conflict,
         Cancelled
     }

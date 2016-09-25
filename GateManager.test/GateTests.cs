@@ -68,7 +68,7 @@ namespace GateManager.test
                 FlightCode = "QFA012",
                 ArrivalTime = new DateTime(2016, 9, 9, 10, 30,0 ),
                 DepartureTime= new DateTime(2016, 9, 9, 10, 59, 0 ),
-                Status = FlightStatus.Active
+                Status = FlightStatus.Scheduled
             };
 
             var result = Task.Run(() => _gateApi.CreateFlight(23, flight)).Result;
@@ -79,7 +79,7 @@ namespace GateManager.test
 
             // Assert that the flight has been added and is not in conflict.
             Assert.AreEqual(flights.Content.Count, 11);
-            Assert.IsTrue(flights.Content.Any(f => f.FlightCode == "QFA012" && f.Status == FlightStatus.Active));
+            Assert.IsTrue(flights.Content.Any(f => f.FlightCode == "QFA012" && f.Status == FlightStatus.Scheduled));
         }
 
         [TestMethod]
@@ -90,7 +90,7 @@ namespace GateManager.test
                 FlightCode = "TGW112",
                 ArrivalTime = new DateTime(2016, 9, 9, 9, 20, 0),
                 DepartureTime = new DateTime(2016, 9, 9, 9, 49, 0),
-                Status = FlightStatus.Active
+                Status = FlightStatus.Scheduled
             };
 
             var result = Task.Run(() => _gateApi.CreateFlight(24, flight)).Result;
@@ -163,5 +163,6 @@ namespace GateManager.test
             Assert.AreEqual(1, gates.Content.Count());
             Assert.IsTrue(gates.Content.Any(g => g.GateNumber == 25));
         }
+
     }
 }

@@ -73,14 +73,18 @@ namespace GateManager.API.Controllers
         {
             if (ModelState.IsValid)
             {
-                var currentFlights = await _repository.GetFlights(gatenumber);
-                if (currentFlights.HasGateConflict(flight))
+                if (flight.ArrivalTime < flight.DepartureTime)
                 {
-                    flight.Status = FlightStatus.Conflict;
-                }
+                    var currentFlights = await _repository.GetFlights(gatenumber);
+                    flight.Status = currentFlights.HasGateConflict(flight) ? FlightStatus.Conflict : FlightStatus.Scheduled;
 
-                await _repository.UpdateFlight(gatenumber, flight);
-                return Ok();
+                    await _repository.UpdateFlight(gatenumber, flight);
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest();
+                }
             }
             else
             {
@@ -105,7 +109,7 @@ namespace GateManager.API.Controllers
                     }
                     else
                     {
-                        flight.Status = FlightStatus.Active;
+                        flight.Status = FlightStatus.Scheduled;
                     }
                     await _repository.MoveFlight(gatenumber, flight, targetgatenumber);
                     return Ok();
@@ -116,6 +120,51 @@ namespace GateManager.API.Controllers
                 }
             }
             return BadRequest();
+        }
+
+        [HttpPut]
+        [Route("gates/{gatenumber}/flights/{flightcode}/bump")]
+        public async Task<IHttpActionResult> BumpFlights(int gatenumber, string flightcode)
+        {
+            var flights = await _repository.GetFlights(gatenumber);
+            if (flights != null)
+            {
+                // Updating all flights after the flight in conflict
+                var conflictFlightIndex = flights.FindIndex(f => f.FlightCode == flightcode) + 1;
+                var conflictFlight = flights.FirstOrDefault(f => f.FlightCode == flightcode);
+
+                if (conflictFlightIndex >= 0 && conflictFlight != null)
+                {
+                    // Clear the conflict status
+                    conflictFlight.Status = FlightStatus.Scheduled;
+                    await _repository.UpdateFlight(gatenumber, conflictFlight);
+
+                    // Iterate through remaining flights on this gate and bump them (if required).
+                    for (int i = conflictFlightIndex; i < flights.Count(); i++)
+                    {
+                        var currentFlight = flights[i];
+                        var previousFlight = flights[i - 1];
+
+                        TimeSpan gateDuration = currentFlight.DepartureTime - currentFlight.ArrivalTime;
+                        if (flights.HasGateConflict(currentFlight))
+                        {
+                            currentFlight.ArrivalTime = previousFlight.DepartureTime.AddMinutes(1);
+                            currentFlight.DepartureTime = currentFlight.ArrivalTime.Add(gateDuration);
+
+                            await _repository.UpdateFlight(gatenumber, currentFlight);
+                        }
+                    }
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpDelete]
