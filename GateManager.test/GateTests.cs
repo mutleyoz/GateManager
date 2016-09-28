@@ -57,7 +57,7 @@ namespace GateManager.test
 
             var flights = Task.Run(() => _gateApi.GetFlights(24)).Result as OkNegotiatedContentResult<List<Flight>>;
             Assert.IsNotNull(flights);
-            Assert.AreEqual(flights.Content.FirstOrDefault(f => f.FlightCode == "FJ003").Status, FlightStatus.Cancelled);
+            Assert.IsFalse(flights.Content.Any(f => f.FlightCode == "FJ003"));
         }
 
         [TestMethod]
@@ -88,8 +88,8 @@ namespace GateManager.test
             Flight flight = new Flight
             {
                 FlightCode = "TGW112",
-                ArrivalTime = new DateTime(2016, 9, 9, 9, 20, 0),
-                DepartureTime = new DateTime(2016, 9, 9, 9, 49, 0),
+                ArrivalTime = DateTime.Today.AddHours(9).AddMinutes(20).ToUniversalTime(),
+                DepartureTime = DateTime.Today.AddHours(9).AddMinutes(48).ToUniversalTime(),
                 Status = FlightStatus.Scheduled
             };
 
